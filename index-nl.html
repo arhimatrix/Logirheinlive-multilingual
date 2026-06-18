@@ -1491,6 +1491,7 @@ body.on-light #lang-switch a:hover {
 
 <!-- ============ SCENE 2.5 · STRAIT OF HORMUZ 2026 ============ -->
 <section class="scene" id="scene-2026" data-scene="2026">
+  <div></div>
   <div class="scene-content scene-content--crisis">
     
     <!-- Eyebrow -->
@@ -1574,15 +1575,30 @@ body.on-light #lang-switch a:hover {
 <style>
 #scene-2026 {
   min-height: 100vh;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(280px, 400px) 1fr;
+  gap: clamp(1rem, 4vw, 4rem);
   align-items: center;
-  justify-content: center;
-  padding: 5vh 2rem;
+  padding: 0 6vw 0 9vw;
   background: transparent;
 }
 .scene-content--crisis {
   max-width: 820px;
   width: 100%;
+}
+@media (max-width: 900px) {
+  #scene-2026 {
+    grid-template-columns: 1fr;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+    padding-left: 6vw;
+    padding-right: 6vw;
+    align-items: start;
+    gap: 1.2rem;
+  }
+  #scene-2026 > div:first-child {
+    display: none;
+  }
 }
 .crisis-stats-row {
   display: grid;
